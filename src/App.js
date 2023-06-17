@@ -6,14 +6,17 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <CitySearch />
-        <EventList />
-      </div>
-    );
+  state = {
+    events: []
   }
+  render() {
+  return (
+    <div className="App">
+      <CitySearch />
+      <EventList events={this.state.events} />
+    </div>
+  );
+}
 }
 
 export default App;
