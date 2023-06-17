@@ -6,7 +6,13 @@ class CitySearch extends Component {
     query: '',
     suggestions: []
   }
-
+  handleItemClicked = (suggestion) => {
+    this.setState({
+      query: suggestion
+    });
+  
+    this.props.updateEvents(suggestion);
+  }
 
   handleInputChanged = (event) => {
     const value = event.target.value;
